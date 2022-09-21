@@ -17,9 +17,9 @@
     ipcRenderer.on('wallpaper', function(event, arg) {
       const background = document.querySelector('#background')
       background.src = `file://${arg.wallpaper}`
-      background.width = arg.width
-      background.height = arg.height
-      background.style.top = `-${arg.top}px`
+      background.width = arg.width + 20
+      background.height = arg.height + 70
+      background.style.top = `-${arg.top - 20}px`
       background.style.left = `-${arg.left}px`
     });
     ipcRenderer.send('asynchronous-message', 'ping');

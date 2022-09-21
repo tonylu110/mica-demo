@@ -8,10 +8,10 @@ const NODE_ENV = process.env.NODE_ENV
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 730,
     show: false,
-    frames: false,
+    frame: false,
     titleBarStyle: 'hiddenInset',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -47,6 +47,20 @@ function createWindow () {
       screenConfig.left = mainWindow.getPosition()[0]
       event.sender.send('wallpaper', screenConfig);
     })
+  });
+
+  ipcMain.on("window-min", () => {
+    mainWindow.minimize()
+  });
+  ipcMain.on("window-max", () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow.maximize();
+    }
+  });
+  ipcMain.on("window-close", () => {
+    app.quit();
   });
 }
 
