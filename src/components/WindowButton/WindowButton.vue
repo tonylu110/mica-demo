@@ -35,6 +35,7 @@ const maxWindow = () => {
   right: 0;
   display: flex;
   flex-direction: row;
+  -webkit-app-region: no-drag;
 }
 
 .button {

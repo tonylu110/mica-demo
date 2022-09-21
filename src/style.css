@@ -36,6 +36,10 @@ body {
   -webkit-app-region: drag;
 }
 
+div, h1, h2, h3, h4, h5, span, button, input, form, p, a {
+  -webkit-app-region: no-drag;
+}
+
 #background {
   position: fixed;
   z-index: -1;
