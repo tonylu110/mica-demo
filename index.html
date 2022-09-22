@@ -19,8 +19,8 @@
       background.src = `file://${arg.wallpaper}`
       background.width = arg.width + 20
       background.height = arg.height + 70
-      background.style.top = `-${arg.top - 20}px`
-      background.style.left = `-${arg.left}px`
+      background.style.top = `${arg.top <= 30 ? '' : '-'}${Math.abs(arg.top - 30)}px`
+      background.style.left = `${arg.left < 0 ? '' : '-'}${Math.abs(arg.left)}px`
     });
     ipcRenderer.send('asynchronous-message', 'ping');
   </script>

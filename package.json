@@ -2,7 +2,7 @@
   "name": "mica-demo",
   "private": true,
   "main": "electron/main.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "commonjs",
   "author": "<your-name> <your-name@mail.com>",
   "scripts": {
