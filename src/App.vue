@@ -7,11 +7,32 @@ import SiderItem from './components/SiderBar/Item/Item.vue';
 <template>
   <WindowButton />
   <SiderBar>
-    <SiderItem title="Home"/>
-    <SiderItem icon="info" title="Info"/>
+    <SiderItem title="Home" name="home"/>
+    <SiderItem icon="info" title="Info" name="info"/>
   </SiderBar>
+  <div class="page">
+    <RouterView></RouterView>
+  </div>
 </template>
 
 <style scoped>
+.page {
+  background-color: #ffffff55;
+  height: calc(100vh - 40px);
+  width: calc(100vw - 270px);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px 0 0 0 ;
+  border-top: 1px solid #ffffff60;
+  border-left: 1px solid #ffffff60;
+}
 
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-color: #33333355;
+    border-top: 1px solid #33333340;
+    border-left: 1px solid #33333340;
+  }
+}
 </style>

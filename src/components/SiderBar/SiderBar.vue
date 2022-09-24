@@ -10,7 +10,7 @@
 
 <style scoped>
 .menu {
-  width: 300px;
+  width: 270px;
   height: calc(100vh - 40px);
   display: flex;
   position: fixed;
