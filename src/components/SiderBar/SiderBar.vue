@@ -35,9 +35,9 @@ const menuChange = () => {
 
 .menu-button {
   position: absolute;
-  left: 6px;
-  width: calc(2rem + 5px);
-  height: calc(2rem + 5px);
+  left: 5px;
+  width: calc(2rem + 6px);
+  height: calc(2rem + 6px);
   display: flex;
   align-items: center;
   justify-content: center;
