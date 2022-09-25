@@ -39,7 +39,6 @@ import Card from '../components/Card/Card.vue'
 .scroll-x > div {
   display: flex;
   flex-direction: row;
-  align-items: center;
   width: calc(100% - 80px);
   margin-left: 40px;
   overflow-x: scroll;

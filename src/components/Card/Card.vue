@@ -1,6 +1,6 @@
 <template>
   <div class="card" :style="{minWidth: width}">
-    <img v-if="img" :src="img" alt="">
+    <img v-if="img" :src="img" alt="" :style="{width: width, height: width}">
     <span class="title">{{ title }}</span>
     <span class="msg">{{ msg }}</span>
   </div>
@@ -47,8 +47,6 @@ defineProps({
 }
 
 img {
-  width: 130px;
-  height: 130px;
   object-fit: cover;
 }
 
