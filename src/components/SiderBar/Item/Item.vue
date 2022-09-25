@@ -6,6 +6,7 @@
   >
     <span class="material-icons">{{ icon }}</span>
     <span class="title">{{ title }}</span>
+    <div v-if="name === routeName" class="item-dot"></div>
   </div>
 </template>
 
@@ -29,7 +30,6 @@ const routeName = ref('')
 
 watchEffect(() => {
   routeName.value = route.name as unknown as string
-  console.log(routeName.value);
 })
 
 const router = useRouter()
@@ -51,6 +51,12 @@ const toRoute = () => {
   user-select: none;
   align-items: center;
   margin-bottom: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.item:nth-child(2) {
+  margin-top: 2.5rem;
 }
 .item:hover {
   background-color: #00000010;
@@ -66,6 +72,15 @@ const toRoute = () => {
 
 span {
   color: white;
+}
+
+.item-dot {
+  background-color: #3648DE;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  width: 3px;
+  border-radius: 3px;
 }
 
 @media (prefers-color-scheme: light) {

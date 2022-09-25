@@ -2,15 +2,18 @@
 import WindowButton from './components/WindowButton/WindowButton.vue';
 import SiderBar from './components/SiderBar/SiderBar.vue';
 import SiderItem from './components/SiderBar/Item/Item.vue';
+import { ref } from 'vue';
+
+const menuOpen = ref(true)
 </script>
 
 <template>
   <WindowButton />
-  <SiderBar>
+  <SiderBar @menuChange="(menu) => menuOpen = menu">
     <SiderItem title="Home" name="home"/>
     <SiderItem icon="info" title="Info" name="info"/>
   </SiderBar>
-  <div class="page">
+  <div class="page" :style="{width: menuOpen ? '' : 'calc(100vw - (2rem + 16px))'}">
     <RouterView></RouterView>
   </div>
 </template>
@@ -24,8 +27,9 @@ import SiderItem from './components/SiderBar/Item/Item.vue';
   right: 0;
   bottom: 0;
   border-radius: 10px 0 0 0 ;
-  border-top: 1px solid #ffffff60;
-  border-left: 1px solid #ffffff60;
+  border-top: 1px solid #dddddd60;
+  border-left: 1px solid #dddddd60;
+  transition: width .3s;
 }
 
 @media (prefers-color-scheme: dark) {
