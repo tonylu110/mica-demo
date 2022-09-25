@@ -30,6 +30,7 @@ const menuOpen = ref(true)
   border-top: 1px solid #dddddd60;
   border-left: 1px solid #dddddd60;
   transition: width .3s;
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
