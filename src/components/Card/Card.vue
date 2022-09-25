@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :style="{minWidth: width}">
     <img v-if="img" :src="img" alt="">
     <span class="title">{{ title }}</span>
     <span class="msg">{{ msg }}</span>
@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   img: String,
   title: {
     default: 'title',
@@ -18,7 +18,7 @@ const props = defineProps({
     type: String
   },
   width: {
-    default: '30px',
+    default: '130px',
     type: String
   }
 })
@@ -28,20 +28,22 @@ const props = defineProps({
 .card {
   display: flex;
   flex-direction: column;
-  min-width: 130px;
   height: auto;
   padding: 0;
   text-align: left;
   background-color: #ffffff70;
   border-radius: 8px;
   overflow: hidden;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin: 5px;
   border: 1px solid #dddddd60;
 }
 
 .card:last-child {
   margin-right: 0;
+}
+
+.card:first-child {
+  margin-left: 0;
 }
 
 img {
