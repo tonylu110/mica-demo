@@ -36,6 +36,7 @@ defineProps({
   overflow: hidden;
   margin: 5px;
   border: 1px solid #dddddd60;
+  user-select: none;
 }
 
 .card:last-child {
