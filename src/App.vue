@@ -13,9 +13,9 @@ const menuOpen = ref(true)
   <SiderBar @menuChange="(menu) => menuOpen = menu">
     <SiderItem title="Home" name="home"/>
     <SiderItem icon="info" title="Info" name="info"/>
-    <FoldItem>
-      <SiderItem/>
-      <SiderItem/>
+    <FoldItem :open="menuOpen" icon="move_to_inbox" title="fold" name="fold">
+      <SiderItem icon="looks_one" title="page1" name="page1"/>
+      <SiderItem icon="looks_two" title="page2" name="page2"/>
     </FoldItem>
   </SiderBar>
   <div class="page" :style="{width: menuOpen ? '' : 'calc(100vw - (2rem + 16px))'}">

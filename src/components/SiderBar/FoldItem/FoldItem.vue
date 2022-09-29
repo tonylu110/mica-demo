@@ -6,10 +6,10 @@
   >
     <span class="material-icons">{{ icon }}</span>
     <span class="title">{{ title }}</span>
-    <span class="material-icons show-more" @click="open = !open">expand_more</span>
+    <span v-if="menuOpen" class="material-icons show-more" @click.stop="open = !open">{{ open && menuOpen ? 'expand_less' : 'expand_more' }}</span>
     <div v-if="name === routeName" class="item-dot"></div>
   </div>
-  <div class="more-item" :style="{height: open ? 'auto' : '0px'}">
+  <div class="more-item" :style="{height: open && menuOpen ? 'auto' : '0px'}">
     <slot/>
   </div>
 </template>
@@ -26,7 +26,11 @@ const props = defineProps({
     default: 'title',
     type: String
   },
-  name: String
+  name: String,
+  open: {
+    default: false,
+    type: Boolean
+  }
 })
 
 const route = useRoute()
@@ -44,6 +48,11 @@ const toRoute = () => {
 }
 
 const open = ref(false)
+const menuOpen = ref(true)
+
+watchEffect(() =>{
+  menuOpen.value = props.open
+})
 </script>
 
 <style scoped>
@@ -69,11 +78,14 @@ const open = ref(false)
 }
 
 :deep(.item) {
-  padding-left: 30px;
-  width: calc(100% - 47px);
+  padding-left: 35px;
+  width: calc(100% - 52px);
 }
 :deep(.item:nth-child(2)) {
   margin-top: 0px;
+}
+:deep(.item-dot) {
+  left: 27px;
 }
 
 .fold-item:nth-child(2) {
