@@ -3,6 +3,7 @@ import WindowButton from './components/WindowButton/WindowButton.vue';
 import SiderBar from './components/SiderBar/SiderBar.vue';
 import SiderItem from './components/SiderBar/Item/Item.vue';
 import { ref } from 'vue';
+import FoldItem from './components/SiderBar/FoldItem/FoldItem.vue';
 
 const menuOpen = ref(true)
 </script>
@@ -12,6 +13,10 @@ const menuOpen = ref(true)
   <SiderBar @menuChange="(menu) => menuOpen = menu">
     <SiderItem title="Home" name="home"/>
     <SiderItem icon="info" title="Info" name="info"/>
+    <FoldItem>
+      <SiderItem/>
+      <SiderItem/>
+    </FoldItem>
   </SiderBar>
   <div class="page" :style="{width: menuOpen ? '' : 'calc(100vw - (2rem + 16px))'}">
     <RouterView></RouterView>
