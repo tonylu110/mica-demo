@@ -25,6 +25,11 @@ const routes = [
     path: '/page2',
     name: 'page2',
     component: () => import("./pages/Fold/FoldPage2.vue"),
+  },
+  {
+    path: '/buttons',
+    name: 'buttons',
+    component: () => import("./pages/Buttons.vue")
   }
 ];
 

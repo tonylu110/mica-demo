@@ -4,9 +4,12 @@ import './style.css'
 import './mica.css'
 import App from './App.vue'
 import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
+import { UmNote, UmNoteConfig } from 'um-note'
+UmNoteConfig()
 import router from './router'
 
 const app = createApp(App)
 
 app.use(router)
+app.use(UmNote)
 app.mount('#app')
