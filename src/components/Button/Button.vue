@@ -51,4 +51,16 @@ defineProps({
 .warning:active {
   background-color: #dd0;
 }
+
+@media (prefers-color-scheme: dark) {
+  .undefined {
+    background-color: #33333370;
+  }
+  .undefined:active {
+    background-color: #33333390;
+  }
+  .warning {
+    color: black;
+  }
+}
 </style>

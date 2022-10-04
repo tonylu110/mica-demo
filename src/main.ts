@@ -5,7 +5,9 @@ import './mica.css'
 import App from './App.vue'
 import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
 import { UmNote, UmNoteConfig } from 'um-note'
-UmNoteConfig()
+UmNoteConfig({
+  theme: 'dark'
+})
 import router from './router'
 
 const app = createApp(App)

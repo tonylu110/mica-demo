@@ -55,7 +55,7 @@ const code = [
 .box {
   background-color: #ffffff50;
   border-radius: 8px;
-  width: calc(100% - 80px);
+  width: calc(100% - 100px);
   margin-left: 40px;
   padding: 10px;
   text-align: left;
@@ -69,5 +69,11 @@ const code = [
 
 .code {
   margin-top: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .box {
+    background-color: #33333370;
+  }
 }
 </style>
