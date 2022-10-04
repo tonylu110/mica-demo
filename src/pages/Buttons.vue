@@ -1,16 +1,28 @@
 <template>
   <ScrollY>
     <span class="title">Buttons</span>
-      <div class="box">
-        Basic Button
-        <div class="basic">
+    <div class="box">
+      Basic Button
+      <div class="basic">
         <Button>Default</Button>
         <Button type="primary">Primary</Button>
         <Button type="error">Error</Button>
         <Button type="warning">Warning</Button>
       </div>
       <div class="code">
-        <um-note :codes="code"/>
+        <um-note :codes="basicCode"/>
+      </div>
+    </div>
+    <div class="box">
+      Round Button
+      <div class="basic">
+        <Button :round="true">Default</Button>
+        <Button type="primary" :round="true">Primary</Button>
+        <Button type="error" :round="true">Error</Button>
+        <Button type="warning" :round="true">Warning</Button>
+      </div>
+      <div class="code">
+        <um-note :codes="roundCode"/>
       </div>
     </div>
   </ScrollY>
@@ -20,7 +32,7 @@
 import ScrollY from '../components/ScrollView/ScrollY.vue';
 import Button from '../components/Button/Button.vue';
 
-const code = [
+const basicCode = [
   {
     language:  'html',
     code:  `<div class="basic">
@@ -28,6 +40,28 @@ const code = [
   <Button type="primary">Primary</Button>
   <Button type="error">Error</Button>
   <Button type="warning">Warning</Button>
+</div>`
+  },
+  {
+    language:  'css',
+    code:  `.basic {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% - 80px);
+  margin-left: 40px;
+}`
+  },
+]
+
+const roundCode = [
+  {
+    language:  'html',
+    code:  `<div class="basic">
+  <Button :round="true">Default</Button>
+  <Button type="primary" :round="true">Primary</Button>
+  <Button type="error" :round="true">Error</Button>
+  <Button type="warning" :round="true">Warning</Button>
 </div>`
   },
   {
@@ -59,6 +93,7 @@ const code = [
   margin-left: 40px;
   padding: 10px;
   text-align: left;
+  margin-bottom: 15px;
 }
 
 .basic {

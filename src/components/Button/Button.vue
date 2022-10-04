@@ -1,12 +1,16 @@
 <template>
-  <div :class="`button ${type}`">
+  <div :class="`button ${type}`" :style="{ borderRadius: round ? '1.5rem' : '' }">
     <slot/>
   </div>
 </template>
 
 <script setup lang="ts">
 defineProps({
-  type: String
+  type: String,
+  round: {
+    default: false,
+    type: Boolean
+  }
 })
 </script>
 
