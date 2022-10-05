@@ -25,6 +25,18 @@
         <um-note :codes="roundCode"/>
       </div>
     </div>
+    <div class="box">
+      Line Button
+      <div class="basic">
+        <Button :line="true">Default</Button>
+        <Button type="primary" :line="true">Primary</Button>
+        <Button type="error" :line="true">Error</Button>
+        <Button type="warning" :line="true">Warning</Button>
+      </div>
+      <div class="code">
+        <um-note :codes="lineCode"/>
+      </div>
+    </div>
   </ScrollY>
 </template>
 
@@ -62,6 +74,28 @@ const roundCode = [
   <Button type="primary" :round="true">Primary</Button>
   <Button type="error" :round="true">Error</Button>
   <Button type="warning" :round="true">Warning</Button>
+</div>`
+  },
+  {
+    language:  'css',
+    code:  `.basic {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% - 80px);
+  margin-left: 40px;
+}`
+  },
+]
+
+const lineCode = [
+  {
+    language:  'html',
+    code:  `<div class="basic">
+  <Button :line="true">Default</Button>
+  <Button type="primary" :line="true">Primary</Button>
+  <Button type="error" :line="true">Error</Button>
+  <Button type="warning" :line="true">Warning</Button>
 </div>`
   },
   {
