@@ -27,9 +27,14 @@ const routes = [
     component: () => import("./pages/Fold/FoldPage2.vue"),
   },
   {
+    path: '/basic',
+    name: 'basic',
+    component: () => import("./pages/Basic/Basic.vue")
+  },
+  {
     path: '/buttons',
     name: 'buttons',
-    component: () => import("./pages/Buttons.vue")
+    component: () => import("./pages/Basic/Buttons.vue")
   }
 ];
 

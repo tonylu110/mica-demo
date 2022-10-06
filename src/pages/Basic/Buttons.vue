@@ -41,8 +41,8 @@
 </template>
 
 <script setup lang="ts">
-import ScrollY from '../components/ScrollView/ScrollY.vue';
-import Button from '../components/Button/Button.vue';
+import ScrollY from '../../components/ScrollView/ScrollY.vue';
+import Button from '../../components/Button/Button.vue';
 
 const basicCode = [
   {

@@ -17,7 +17,7 @@ const menuOpen = ref(true)
       <SiderItem icon="looks_one" title="page1" name="page1"/>
       <SiderItem icon="looks_two" title="page2" name="page2"/>
     </FoldItem>
-    <FoldItem :open="menuOpen" icon="monitor_heart" title="Basic" name="fold">
+    <FoldItem :open="menuOpen" icon="monitor_heart" title="Basic" name="basic">
       <SiderItem icon="smart_button" title="Buttons" name="buttons" />
     </FoldItem>
   </SiderBar>
